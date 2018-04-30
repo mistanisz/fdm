@@ -8,9 +8,9 @@ module gauss
 
     contains
     subroutine eliminate(M, X, N)
-        integer (kind=K), intent(in) :: N
+        integer (kind=8), intent(in) :: N
         integer (kind=8) :: I, J
-        real (kind=K), intent(inout) :: M(:,:), X(:)
+        real (kind=K), intent(inout) :: M(0:N,0:N), X(0:N)
         real (kind=K) :: c
     
         do I = 0, N
@@ -19,6 +19,8 @@ module gauss
                     c = M(I, J) / M(I,I)
                     M(:,J) = M(:,J) - c * M(:,I)
                     X(J) = X(J) - c*X(I)
+                    X(I) = X(I)/M(I,I)
+                    M(:,I) = M(:, I)/M(I,I)
                 end if
             end do
         end do
