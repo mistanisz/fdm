@@ -1,2 +1,10 @@
+K = 4
+
+compile = ifort src/* -o $(1) -std08 -warn all -module . -implicitnone -fpp -DK=$(K) $(2) -g
+
+
 make:
-	ifort ads.f90 -o ads -std08 -fpp -warn all
+	$(call compile,main,,)
+
+
+
