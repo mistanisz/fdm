@@ -1,6 +1,6 @@
 # Finite difference method
 
-###Prerequisites
+### Prerequisites
 
 Installed `ifort` compiler
 
@@ -23,15 +23,17 @@ make K=8
 ```
 where n is grid size.
 
-##Charts
+The output is average error between calculated value and expected value.
+
+## Charts
 
 Each point is represents difference between calculated value and expected value.
 
-###KIND=4
+### KIND=4
 ![kind4chart](charts/kind4.png)
 
-###KIND=8
+### KIND=8
 ![kind8chart](charts/kind8.png)
 
-###KIND=16
+### KIND=16
 ![kind16chart](charts/kind16.png)
