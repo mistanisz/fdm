@@ -1,10 +1,11 @@
 #define K 4
 
 
-program ads
+program main
+    use logic
     implicit none
     real (kind=K) :: h, P1, P2, P3
-    real (kind=K), allocatable :: tab(:,:), rv(:), res(:)
+    real (kind=K), allocatable :: M(:,:), X(:)
     integer (kind=K) :: n, x,y
     character(10) :: val
 
@@ -19,7 +20,8 @@ program ads
         write(*,*) x 
     end do
 
-    allocate (tab(n,n))
+    allocate (M(0:n,0:n))
+    allocate (X(0:n))
     
 
     
